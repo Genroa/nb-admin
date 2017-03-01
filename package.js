@@ -13,10 +13,15 @@ Package.describe({
 Package.onUse(function(api) {
 	api.versionsFrom('1.4.3.1');
 	api.use('ecmascript');
-	api.mainModule('nb-admin.js');
+	api.use('iron:router');
 
 	api.addFiles("declarations.js");
+	api.addFiles("helpers.js");
+
 	api.export("AdminPanels");
+	api.export("AdminController");
+
+	api.mainModule('nb-admin.js');
 });
 
 Package.onTest(function(api) {
