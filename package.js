@@ -22,7 +22,8 @@ Package.onUse(function(api) {
 	
 	api.addFiles("admin_panel.html", "client");
 	api.addFiles("admin_panel.js", "client");
-	
+	api.addFiles("admin_panel.css", "client");
+
 	api.export("AdminPanels");
 	api.export("AdminController");
 

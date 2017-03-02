@@ -1,15 +1,22 @@
 <template name="admin_panel">
-	<a href="/">Accueil</a>
-	{{setTitle currentPanel.name}}
-	<p>Panels:</p>
-	<ul>
-		{{#each panel in getAdminPanels}}
-			<li><a href="/admin/{{panel.id}}">{{panel.name}}</a></li>
-		{{/each}}
-	</ul>
-
-	<!-- Current Panel: {{currentPanel.name}}-->
-	<div>
-		{{> Template.dynamic template=currentPanel.template}}
+	<div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer
+	mdl-layout--fixed-header admin_panel">
+		<header class="mdl-layout__header">
+			<div class="mdl-layout__header-row">
+			<div class="mdl-layout-spacer"></div>
+			</div>
+		</header>
+		<div class="mdl-layout__drawer">
+			<span class="mdl-layout-title">Administration</span>
+			<nav class="mdl-navigation">
+				{{#each panel in getAdminPanels}}
+					<a class="mdl-navigation__link" href="/admin/{{panel.id}}">{{panel.name}}</a>
+				{{/each}}
+			</nav>
+		</div>
+		<main class="mdl-layout__content">
+			{{setTitle currentPanel.name}}
+			{{> Template.dynamic template=currentPanel.template}}
+		</main>
 	</div>
 </template>
