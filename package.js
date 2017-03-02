@@ -14,10 +14,15 @@ Package.onUse(function(api) {
 	api.versionsFrom('1.4.3.1');
 	api.use('ecmascript');
 	api.use('iron:router');
-
+	api.use('blaze-html-templates');
+	api.use("templating", "client");
+	
 	api.addFiles("declarations.js");
 	api.addFiles("helpers.js");
-
+	
+	api.addFiles("admin_panel.html", "client");
+	api.addFiles("admin_panel.js", "client");
+	
 	api.export("AdminPanels");
 	api.export("AdminController");
 
